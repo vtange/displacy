@@ -4,9 +4,9 @@
 
 include _mixins
 
-header.o-banner.o-form
+form.o-banner.o-form(name="sentence", method="post")
     +input("Your sentence here...")#input
-        +search#submit
+        +input(type="submit" onkeydown="if (event.keyCode == 13) { this.form.submit(); return false; }")#submit
 
     +dropdown("radio", "model", "Model", { en: "English (v0.101.0)", de: "German (v0.101.0)" }, "en")
 
